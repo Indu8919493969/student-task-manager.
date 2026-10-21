@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">STUDY SMARTER</p>
+      <h1>Student Task Manager</h1>
+      <p class="subtitle">Organize your study life, one task at a time.</p>
+    </header>
+
+    <section class="summary">
+      <div class="stat">
+        <span id="totalCount">0</span>
+        <p>Total tasks</p>
+      </div>
+      <div class="stat">
+        <span id="activeCount">0</span>
+        <p>Pending</p>
+      </div>
+      <div class="stat">
+        <span id="completedCount">0</span>
+        <p>Completed</p>
+      </div>
+    </section>
+
+    <section class="task-panel">
+      <h2>Add a new task</h2>
+      <form id="taskForm">
+        <label for="taskInput">Task name</label>
+        <input id="taskInput" type="text"
+          placeholder="e.g. Complete AI assignment"
+          maxlength="150" required>
+
+        <label for="dueDate">Due date (optional)</label>
+        <input id="dueDate" type="date">
+
+        <button class="add-button" type="submit">+ Add Task</button>
+      </form>
+
+      <div class="list-heading">
+        <h2>My tasks</h2>
+        <button id="clearCompleted" class="text-button" type="button">
+          Clear completed
+        </button>
+      </div>
+
+      <div class="filters" aria-label="Filter tasks">
+        <button class="filter active" data-filter="all" type="button">All</button>
+        <button class="filter" data-filter="active" type="button">Pending</button>
+        <button class="filter" data-filter="completed" type="button">Completed</button>
+      </div>
+
+      <ul id="taskList" aria-live="polite"></ul>
+      <p id="emptyMessage" class="empty-message">
+        No tasks yet. Add your first task above!
+      </p>
+    </section>
+
+    <footer>Made for students · Stay focused and keep learning!</footer>
+  </main>
+</body>
+</html>
